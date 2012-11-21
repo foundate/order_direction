@@ -3,6 +3,11 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'order_direction/version'
 
+Gem::Specification.new do |s|
+  s.add_development_dependency "rspec"
+  # Other attributes omitted
+end
+
 Gem::Specification.new do |gem|
   gem.name          = "order_direction"
   gem.version       = OrderDirection::VERSION
