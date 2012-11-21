@@ -1,5 +1,3 @@
-OrderDirection::ControllerExtension
-
 module OrderDirection
   module ControllerExtension
     
