@@ -49,64 +49,11 @@ module ActiveRecord
 
       end
       
-      # #paramsを引数で渡せば@_paramsが使用可能
-      # def order_director(params)
-      #   if params.key?('sort') && params.key?('direction')
-      #   else
-      #     order(:id)
-      #   end
-      #   
-      #   binding.pry
-      #   
-      #   # @column = (@_params[:sort].present?)? @_params[:sort] : ''
-      #   # @direction = (@_params[:direction].present?)? @_params[:direction] : ''
-      #   # order_by_direction
-      # end
-      # 
-      # def get_column
-      #   
-      #   binding.pry
-      #   
-      #   # Convention.column_names.include?(@column) ? @column : "years"
-      # end
-      # 
-      # def get_direction
-      #   %w[asc desc].include?(@direction) ? @direction : "desc"
-      # end
-      # 
-      # def order_by_direction
-      #   get_column + " " + get_direction
-      # end
-      # 
-      # 
-      # # def load_sort_director
-      # #   binding.pry
-      # # end
-      
-    end
+      def order_director(params = nil)
+        self.scoped.order_director(params)
+      end
 
-    # module InstanceMethods
-    #   
-    #   #paramsを引数で渡せば@_paramsが使用可能
-    #   def order_director(params)
-    #     @column = (@_params[:sort].present?)? @_params[:sort] : ''
-    #     @direction = (@_params[:direction].present?)? @_params[:direction] : ''
-    #     order_by_direction
-    #   end
-    #   
-    #   def get_column
-    #     Convention.column_names.include?(@column) ? @column : "years"
-    #   end
-    #   
-    #   def get_direction
-    #     %w[asc desc].include?(@direction) ? @direction : "desc"
-    #   end
-    #   
-    #   def order_by_direction
-    #     get_column + " " + get_direction
-    #   end
-    #   
-    # end
-    
+    end
+ 
   end
 end

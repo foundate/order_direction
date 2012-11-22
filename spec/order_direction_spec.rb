@@ -30,10 +30,18 @@ describe "OrderDirection Gem Test" do
       Convention.order_direction_options == {:default_order => "years"}
     end
     
-    it "should object respond_to? order_director method" do
+    it "should object ActiveRecord Record respond_to? order_director method" do
+      Convention.respond_to?('order_director').should be_true
+    end
+    
+    it "should object ActiveRecord Relation respond_to? order_director method" do
       Convention.select(:id).respond_to?('order_director').should be_true
     end
-
+    
+    it "should object ActiveRecord Record respond_to? order_director method" do
+      Convention.order_director().select(:id).to_sql == "SELECT id FROM \"conventions\"  ORDER BY years"
+    end
+    
     it "#order_director No Parameters Default Order" do
       Convention.select(:id).order_director().to_sql.should == "SELECT id FROM \"conventions\"  ORDER BY years"
     end
@@ -48,7 +56,7 @@ describe "OrderDirection Gem Test" do
       Convention.select(:id).order_director(params).to_sql.should == "SELECT id FROM \"conventions\"  ORDER BY years asc"
     end
     
-    it "#order_director direction1" do
+    it "#order_director direction2" do
       params = {"direction"=>"desc", "sort"=>"created_at"}
       Convention.select(:id).order_director(params).to_sql.should == "SELECT id FROM \"conventions\"  ORDER BY created_at desc"
     end

@@ -5,3 +5,4 @@ require "order_direction/order_direction"
 # ActiveRecord::Base.send :extend, OrderDirection::ModelExtension
 
 ActiveRecord::Base.send(:include, ActiveRecord::OrderDirection)
+ActionView::Base.send(:include, OrderDirectionHelper)
