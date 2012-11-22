@@ -31,8 +31,8 @@ params = {"direction"=>"asc", "sort"=>"years"}
 
 	sortable_direction :created_at, 'created_at'
 
-<a href="/direction=desc&sort=created_at">created_at</a>
-<i class="icon-arrow-down"></i>
+	<a href="/direction=desc&sort=created_at">created_at</a>
+	<i class="icon-arrow-down"></i>
 ## Contributing
 
 1. Fork it
