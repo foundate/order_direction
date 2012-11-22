@@ -6,6 +6,7 @@ module OrderDirectionHelper
     title ||= column.titleize
     direction = %w(asc desc).include?(params[:direction]) ? params[:direction] : "desc"
     direction = (direction == "asc") ? "desc" : "asc"
+    html = ""
     html << link_to(title, params.merge(:sort => column, :direction => direction))
     html << " <i class='icon-arrow-#{direction == 'desc' ? 'down' : 'up'}'></i>"
     html.html_safe
