@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   
   
-  gem.add_dependency(%q<rails>, ["~> 3.0"])
+  gem.add_dependency(%q<rails>, ["3.2.8"])
   gem.add_dependency(%q<rake>, [">= 0.8.0"])
   gem.add_development_dependency(%q<rspec>)
   gem.add_development_dependency(%q<pry>)

@@ -4,7 +4,7 @@ module ActiveRecord
   class Relation
     
     def order_director(params = nil)
-      if params.instance_of?(Hash)
+      if params.instance_of?(ActiveSupport::HashWithIndifferentAccess) || params.instance_of?(Hash)
         if params.key?('sort') && params.key?('direction')
           @column = params['sort'].to_s;
           @direction = params['direction'].to_s
