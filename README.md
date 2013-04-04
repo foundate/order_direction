@@ -14,18 +14,9 @@ And then execute:
 
 ## Usage
 
-		class Sample < ::ActiveRecord::Base
-		  order_direction_default :years
-		end
+		Model.where(id: => 1).order_director(params).page(params[:page])
 
-order_direction_default :years ← Default Order Colmun
-
-		Convention.order_director().select(:id).to_sql #SELECT id FROM conventions ORDER BY years
-		Convention.select(:id).order_director().to_sql #SELECT id FROM conventions ORDER BY years"
-		Convention.select(:id).order_director(params).to_sql #SELECT id FROM conventions ORDER BY years asc
-
-params = {"direction"=>"asc", "sort"=>"years"}
-「params」Parameter provides us with a helper
+return ActiveRecord::Relation
 
 ## Helper
 
